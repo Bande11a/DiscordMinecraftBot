@@ -34,3 +34,17 @@ export async function registerEvents(client: DiscordClient, dir: string = '') {
     }
   }
 }
+
+export async function registerBotEvent(client: DiscordClient, dir: string = "") {
+  const filePath = path.join(__dirname, dir);
+  const files = await fs.readdir(filePath);
+  for (const file of files) {
+    const stat = await fs.lstat(path.join(filePath, file));
+    if (stat.isDirectory()) registerBotEvent(client, path.join(dir, file));
+    if (file.endsWith('.js') || file.endsWith('.ts')) {
+      const { default: BotComand } = await import(path.join(dir, file));
+      const botComand = new BotComand();
+      client.botEvents.set(botComand.getName(), botComand);
+    }
+  }
+}

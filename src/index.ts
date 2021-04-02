@@ -1,5 +1,5 @@
 
-import { registerCommands, registerEvents } from './utils/registry';
+import { registerCommands, registerEvents, registerBotEvent } from './utils/registry';
 import config from '../slappey.json';
 import DiscordClient from './client/client';
 const client = new DiscordClient({});
@@ -8,6 +8,7 @@ const client = new DiscordClient({});
   client.prefix = config.prefix || client.prefix;
   await registerCommands(client, '../commands');
   await registerEvents(client, '../events');
+  await registerBotEvent(client, "../MCBOT");
   await client.login(config.token);
 })();
 

@@ -3,5 +3,11 @@
   "language": "typescript",
   "manager": "npm",
   "token": "",
-  "prefix": "%"
+  "prefix": "%",
+  "host": "cosmicpvp.com",
+  "username": "",
+  "password": "",
+  "auth": "mojang",
+  "version": "1.8.9",
+  "hub_command": "/server dungeonplanet"
 }
