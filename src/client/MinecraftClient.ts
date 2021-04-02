@@ -40,8 +40,7 @@ MCBOT.on("message", (jsonMsg: any, position: any) => {
         }
         longmsg = longmsgarray.join("");
 
-        //Sends the message back to the main thread
-        process.send && process.send({ ChatMsg: longmsg });
+        console.log(longmsg);
     }
 })
 
