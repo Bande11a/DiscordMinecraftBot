@@ -4,6 +4,7 @@ import BaseCommand from '../utils/structures/BaseCommand';
 import BaseMCBotEvent from "../utils/structures/BaseMCBotEvent";
 import { ChildProcess, fork} from 'child_process';
 import {mcbotIndex} from "./MCBOT_Index";
+import {SaveData} from "../utils/structures/DataInterface";
 const fs = require("fs")
 
 
@@ -19,7 +20,9 @@ export default class DiscordClient extends Client {
   private _botEvents = new Collection<string, BaseMCBotEvent>();
   private _events = new Collection<string, BaseEvent>();
   private _prefix: string = '!';
-  private _data: any = {};
+  private _data: SaveData = {
+    Whitelist: {}
+  };
   private _MCBOT: ChildProcess;
 
 
