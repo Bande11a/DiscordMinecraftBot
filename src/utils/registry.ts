@@ -35,6 +35,7 @@ export async function registerEvents(client: DiscordClient, dir: string = '') {
   }
 }
 
+//Here i am looking for any .js or .ts files to load into the BotEvent collection defined in the DiscordClient object as botEvents.
 export async function registerBotEvent(client: DiscordClient, dir: string = "") {
   const filePath = path.join(__dirname, dir);
   const files = await fs.readdir(filePath);

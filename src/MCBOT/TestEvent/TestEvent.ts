@@ -7,6 +7,7 @@ export default class TestCommand extends BaseMCBotEvent {
   }
 
   async run(client: DiscordClient, data: any) {
+    //Any code in here will execute when the event is called
     console.log(`The test Event seems to be working the data I recived was: ${data}`);
   }
 }
