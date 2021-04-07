@@ -7,13 +7,12 @@ replace the 'GroupName'
 
 
 /*
-import { Message } from 'discord.js';
 import BaseMCBotEvent from '../../utils/structures/BaseMCBotEvent';
 import DiscordClient from '../../client/client';
 
 export default class TestCommand extends BaseMCBotEvent {
   constructor() {
-    super('EventName', 'GroupName', []);
+    super('EventName', 'GroupName');
   }
 
   async run(client: DiscordClient, data: any) {
